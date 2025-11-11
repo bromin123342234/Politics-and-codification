@@ -153,6 +153,12 @@
             border-left-color: #ff8c42;
         }
 
+        .info-item.danger {
+            background: rgba(255, 68, 68, 0.1);
+            border-left-color: #ff4444;
+            border: 2px solid #ff4444;
+        }
+
         .info-title {
             font-weight: 600;
             color: #ff8c42;
@@ -224,9 +230,41 @@
             margin-top: 50px;
         }
 
+        .age-warning {
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.15), rgba(255, 140, 66, 0.15));
+            border: 2px solid #ff4444;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .age-warning-title {
+            font-size: 1.4rem;
+            color: #ff4444;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .age-warning-text {
+            font-size: 1.1rem;
+            color: #ff8c42;
+            font-weight: 600;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse-warning {
+            animation: pulse 2s infinite;
         }
 
         @media (max-width: 768px) {
@@ -255,10 +293,16 @@
 <body>
     <div class="header">
         <h1 class="title">🔒 Конфиденциальность</h1>
-        <p class="subtitle">Magic Wheel - Ваша безопасность важна для нас</p>
+        <p class="subtitle">Halloween Wheel - Ваша безопасность важна для нас</p>
     </div>
 
     <div class="container">
+        <!-- Возрастное ограничение -->
+        <div class="age-warning pulse-warning">
+            <div class="age-warning-title">🚫 ВОЗРАСТНОЕ ОГРАНИЧЕНИЕ</div>
+            <div class="age-warning-text">Если вам меньше 17 лет, пожалуйста: НЕ ИГРАЙТЕ!</div>
+        </div>
+
         <div class="nav-tabs">
             <div class="nav-tab active" onclick="showSection('privacy')">Конфиденциальность</div>
             <div class="nav-tab" onclick="showSection('data')">Данные</div>
@@ -274,7 +318,7 @@
                     Наша философия конфиденциальности
                 </h2>
                 <div class="card-content">
-                    <p>Мы создали Magic Wheel с мыслью о вашей приватности. Мы собираем только ту информацию, которая необходима для работы игры и улучшения вашего опыта.</p>
+                    <p>Мы создали Halloween Wheel с мыслью о вашей приватности. Мы собираем только ту информацию, которая необходима для работы игры и улучшения вашего опыта.</p>
                     <p><strong>Простое правило:</strong> Мы не продаем и не передаем ваши данные третьим лицам для рекламных целей.</p>
                 </div>
             </div>
@@ -373,17 +417,16 @@
 
             <div class="section-card">
                 <h2 class="card-title">
-                    <span class="card-icon">👶</span>
-                    Для детей
+                    <span class="card-icon">🔞</span>
+                    Возрастные ограничения
                 </h2>
                 <div class="card-content">
-                    <p>Игра предназначена для пользователей <strong>старше 17 лет</strong>.</p>
-                    <p>Если вам меньше 17 лет, пожалуйста:</p>
-                    <ul style="margin: 15px 0; padding-left: 20px;">
-                        <li>не играйте!</li>
-                        <li>Не указывайте личную информацию</li>
-                        <li>Сообщите родителям о любых проблемах</li>
-                    </ul>
+                    <div class="info-item danger">
+                        <div class="info-title">🚫 ВНИМАНИЕ</div>
+                        <p><strong>Игра предназначена исключительно для пользователей старше 17 лет.</strong></p>
+                        <p>Если вам меньше 17 лет, пожалуйста: <strong>НЕ ИГРАЙТЕ!</strong></p>
+                    </div>
+                    <p style="margin-top: 15px;">Мы серьезно относимся к возрастным ограничениям и просим соблюдать это правило.</p>
                 </div>
             </div>
         </div>
@@ -430,7 +473,7 @@
                     <ul style="margin: 15px 0; padding-left: 20px;">
                         <li>Уведомление в игре</li>
                         <li>Обновление на этой странице</li>
-                        <li>Сообщение в наших социальных сетях</li>
+                        <li>Сообщение в нашем Telegram канале</li>
                     </ul>
                 </div>
             </div>
@@ -441,10 +484,13 @@
             <h3 class="contact-title">Нужна помощь?</h3>
             <p>Свяжитесь с нами по любым вопросам конфиденциальности</p>
             <div class="contact-links">
-                <a href="mailto:privacy@halloweenwheel.com" class="contact-link">📧 Email</a>
-                <a href="https://t.me/halloweenwheel_support" class="contact-link">📱 Telegram</a>
-                <a href="https://discord.gg/halloweenwheel" class="contact-link">💬 Discord</a>
+                <a href="https://t.me/magicwheelOfficial" class="contact-link" target="_blank">
+                    📱 Telegram: @magicwheelOfficial
+                </a>
             </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                Отвечаем в течение 24 часов
+            </p>
         </div>
 
         <div style="text-align: center;">
@@ -515,4 +561,3 @@
     </script>
 </body>
 </html>
-
